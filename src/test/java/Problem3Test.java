@@ -7,11 +7,21 @@ public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
         // quiz
+        Book book1 = new BookFiction("Hitchhiker's Guide" , "Douglas Adams",  "Science Fiction");
+        Book book2 = new BookFiction((BookFiction) book1);
+        book2.setAuthor("Eoin Colfer");
+        book2.setTitle("And Another Thing");
+        assertTrue(book1.equals(book2));
+
     }
 
     @Test
     public void catchTheBugInMovie() {
         // quiz
+        Movie movie1 = new MovieComedy("PG" , "Mulan");
+        Movie movie2 = new MovieComedy((MovieComedy) movie1);
+        movie2.setRating("PG-13");
+        assertTrue(movie1.equals(movie2));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
